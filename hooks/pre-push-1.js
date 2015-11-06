@@ -8,7 +8,7 @@ var fs = require('fs'),
     curBranch, curVersion, masterVersion;
 
 
-curBranch = getCurrentVersion(execSync('git branch'));
+curBranch = getCurrentBranch(execSync('git branch'));
 curVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
 /**if (curBranch !== 'master') {
@@ -21,7 +21,7 @@ curVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-
 }*/
 
 execSync('git checkout origin/master -f');
-execSync('git pull origin master:' + getCurrentVersion(execSync('git branch')) + ' -f');
+execSync('git pull origin master:' + getCurrentBranch(execSync('git branch')) + ' -f');
 
 masterVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
@@ -36,7 +36,7 @@ if (curVersion === masterVersion) {
 console.log(chalk.gray('正在切回当前分支......'));
 execSync('git checkout ' + curBranch + ' -f');
 
-function getCurrentVersion(verBuffer) {
+function getCurrentBranch(verBuffer) {
     var ary = verBuffer.toString().split('\n'),
         result = '';
 
