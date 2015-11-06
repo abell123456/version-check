@@ -47,5 +47,5 @@ function getCurrentBranch(verBuffer) {
         }
     });
 
-    return result.trim();
+    return result.replace(/\(|\)|detached|from|\s+/g, '').trim();
 }
