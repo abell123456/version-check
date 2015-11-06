@@ -44,5 +44,5 @@ function getCurrentVersion(verBuffer) {
         }
     });
 
-    return result;
+    return result.trim();
 }
