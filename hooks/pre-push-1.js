@@ -11,14 +11,16 @@ var fs = require('fs'),
 curBranch = getCurrentVersion(execSync('git branch'));
 curVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
-if (curBranch !== 'master') {
+/**if (curBranch !== 'master') {
     execSync('git checkout origin/master -f');
-    execSync('git pull origin master:master -f');
+    // execSync('git pull origin master:master -f');
 } else {
     // master分支不做检查
     console.log(chalk.red('您当前处于master分支！'));
     process.exit(0);
-}
+}*/
+
+execSync('git checkout origin/master -f');
 
 masterVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
