@@ -1,0 +1,24 @@
+{
+  "name": "check-version",
+  "version": "1.0.0",
+  "description": "version check when you push your code",
+  "main": "index.js",
+  "scripts": {
+    "verCheck": "node ./hooks/pre-push-1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alibaba-inc.com:xiangzhong.wxz/check-version.git"
+  },
+  "keywords": [
+    "git",
+    "push"
+  ],
+  "author": "xiangzhong.wxz",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "normalize-path": "^2.0.0",
+    "strip-json-comments": "^1.0.4"
+  }
+}
