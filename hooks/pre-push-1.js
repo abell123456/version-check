@@ -21,7 +21,7 @@ curVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-
 }*/
 
 execSync('git checkout origin/master -f');
-execSync('git pull origin master:origin/master -f');
+execSync('git pull origin master:' + getCurrentVersion(execSync('git branch')) + ' -f');
 
 masterVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
