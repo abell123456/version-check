@@ -1,0 +1,29 @@
+{
+    "name": "git-hooks",
+    "version": "1.0.0",
+    "description": "install and uninstall git hooks for convinience",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.alibaba-inc.com:xiangzhong.wxz/git-hooks.git"
+    },
+    "keywords": [
+        "git",
+        "hooks",
+        "pre-submmit"
+    ],
+    "author": "xiangzhong.wxz",
+    "license": "ISC",
+    "devDependencies": {
+        "rimraf": "^2.2.8"
+    },
+    "dependencies": {
+        "normalize-path": "^1.0.0"
+    },
+    "publishConfig": {
+        "registry": "http://registry.npm.alibaba-inc.com"
+    }
+}
