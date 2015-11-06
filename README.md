@@ -13,13 +13,11 @@
 1、如果你要测试该项目，你要先运行index.js进行钩子安装。  
 2、对代码随便做些更改（当然不改也没问题），然后git push提交你的代码，即可看到命令行里输出的结果。  
 如果你看到类似如下的输出时说明你运行成功了：  
-`
-➜ /Users/wangxiangzhong/test/version-check git:(develop)>git push -f                  
-Switched to branch 'master'  
-当前分支: develop 版本号为: 1.0.0  
-master 分支版本号为: 1.0.0  
-警告:您当前本地  develop 分支版本号与远程 master 分支版本号一致,请记得在发布前更改版本号!  
-正在切回当前分支......  
-Switched to branch 'develop'  
-Everything up-to-date
-`
+`➜ /Users/wangxiangzhong/test/version-check git:(develop)>git push -f`                    
+`Switched to branch 'master'`  
+`当前分支: develop 版本号为: 1.0.0`  
+`master 分支版本号为: 1.0.0`  
+`警告:您当前本地  develop 分支版本号与远程 master 分支版本号一致,请记得在发布前更改版本号!`  
+`正在切回当前分支......`  
+`Switched to branch 'develop'`  
+`Everything up-to-date`
