@@ -12,7 +12,10 @@ curBranch = getCurrentVersion(execSync('git branch'));
 curVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
 execSync('git checkout master -f');
-execSync('git pull origin master:master -f');
+
+if(curBranch !== 'master'){
+    execSync('git pull origin master:master -f');
+}
 
 masterVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
