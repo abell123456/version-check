@@ -12,7 +12,7 @@ curBranch = getCurrentVersion(execSync('git branch'));
 curVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
 if (curBranch !== 'master') {
-    execSync('git checkout master -f');
+    execSync('git checkout origin/master -f');
     execSync('git pull origin master:master -f');
 } else {
     // master分支不做检查
