@@ -24,7 +24,7 @@ masterVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'u
 
 
 console.log(chalk.blue('当前分支:') + chalk.red(curBranch) + chalk.blue(' 版本号为: ') + chalk.red(curVersion));
-console.log(chalk.red('master ') + chalk.blue('分支版本号为: ') + chalk.red(masterVersion));
+console.log(chalk.red('远程 master ') + chalk.blue('分支版本号为: ') + chalk.red(masterVersion));
 
 if (curVersion === masterVersion) {
     console.log(chalk.red('警告:您当前本地 ' + curBranch + ' 分支版本号与远程 master 分支版本号一致,请记得在发布前更改版本号!'));
