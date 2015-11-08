@@ -26,14 +26,13 @@ execSync('git pull origin master:' + getCurrentBranch(execSync('git branch')) + 
 masterVersion = JSON.parse(stripJsonComments(fs.readFileSync(packageJsonPath, 'utf-8'))).version;
 
 
-console.log(chalk.blue('本地: ') + chalk.red(curBranch) + chalk.blue(' 分支版本号为: ') + chalk.red(curVersion));
-console.log(chalk.blue('远程: ') + chalk.red('master') + chalk.blue(' 分支版本号为: ') + chalk.red(masterVersion));
+console.log(chalk.blue('本地: s% 分支版本号为: s%'), chalk.red(curBranch), chalk.red(curVersion));
+console.log(chalk.blue('远程: s% 分支版本号为: s%'), chalk.red('master'), chalk.red(masterVersion));
 
 if (curVersion === masterVersion) {
-    console.log(chalk.red('警告:您当前本地 ' + curBranch + ' 分支版本号与远程 master 分支版本号一致,请记得在发布前更改版本号!'));
+    console.log(chalk.red('警告:您当前本地 s% 分支版本号与远程 master 分支版本号一致,请记得在发布前更改版本号!', curBranch));
 }
 
-console.log(chalk.gray('正在切回当前分支......'));
 execSync('git checkout ' + curBranch + ' -f');
 
 function getCurrentBranch(verBuffer) {
