@@ -30,7 +30,7 @@ console.log(chalk.blue('本地: %s' + chalk.blue(' 分支版本号为: ') + chal
 console.log(chalk.blue('远程: %s' + chalk.blue(' 分支版本号为: ') + chalk.red.underline.bold('%s')), chalk.red('master'), masterVersion);
 
 if (curVersion === masterVersion) {
-    console.log(chalk.red('警告:您当前本地 %s 分支版本号与远程 master 分支版本号一致,请记得在发布前更改版本号!'), curBranch);
+    console.log(chalk.red('警告:您当前本地 ' + chalk.green('%s') + ' 分支版本号与远程 ' + chalk.green('master') + ' 分支版本号一致,请记得在发布前更改版本号!'), curBranch);
 }
 
 execSync('git checkout ' + curBranch + ' -f');
