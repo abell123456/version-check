@@ -23,5 +23,5 @@
 `Everything up-to-date`
 
 ## 后记
-后面我在浏览一篇关于git实用命令的时候，我突然发现了个更好的实现思路，那就是使用：`git show branch:file`命令，能直接读到某个分支的某个文件的内容。于是我们使用：`git show origin/master:package.json`命令就能读到远程master分支的package.json文件，从而获取到其版本号。  
+后面我在浏览一篇关于git实用命令的时候，我突然发现了个更好的实现思路，那就是使用：`git show branch:file`命令，能直接读到某个分支的某个文件的内容。于是我们使用：`git show origin/master:package.json`命令就能读到远程master分支的package.json文件，从而获取到其版本号。 最终实现的版本在`lib/last-implementation.js`。 
 这种实现简单方便，实为上上策！
